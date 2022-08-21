@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Приложение</string>
+    <string name="address">Домашний адрес</string>
+    <string name="occupy">Професия</string>
+    <string name="settings">Настройки</string>
+    <string name="user_name">Имя пользователя</string>
+    <string name="todo">TODO</string>
+    <string name="edit_profile_button">Ред. профиль</string>
+    <string name="e_mail">Е-мейл</string>
+    <string name="let_s_get_acquainted">Давайте познакомимся</string>
+    <string name="fill_out_the_profile_and_go_to_the_application">Заполните профиль
+        и запускайте приложение</string>
+    <string name="password">Пароль</string>
+    <string name="remember_me">Запомнить меня</string>
+    <string name="register">Регистрация</string>
+    <string name="already_have_account">Уже имеете аккаунт?</string>
+    <string name="sign_in">Ввойти</string>
+    <string name="by_clicking_register_you_agree_to_our_terms_n_and_conditions">Нажимая кнопку"Регистрация"
+        вы подтверждаете наши правила \n и условия</string>
+    <string name="go_to_settings_and_fill_out_the_profile">Идите в настройки и заполните профиль</string>
+    <string name="view_my_contacts">Посмотреть мои контакты</string>
+    <string name="required">*обязательно к заполнению</string>
+    <string name="invalid_email_address">Неправильный е-мейл адрес</string>
+
+</resources>
