@@ -12,22 +12,17 @@ import com.example.myapplication.databinding.ItemUserBinding
 import com.example.myapplication.model.User
 
 
-interface UserActionListener{
+interface UserActionListener {
     fun onUserDelete(user: User)
 }
 
-
-class UsersAdapter(private val actionListener: UserActionListener)
-    : RecyclerView.Adapter<UsersAdapter.UsersViewHolder>(), View.OnClickListener{
-
-
+class UsersAdapter(private val actionListener: UserActionListener) :
+    RecyclerView.Adapter<UsersAdapter.UsersViewHolder>(), View.OnClickListener {
 
     var users: List<User> = emptyList()
         set(newValue) {
             field = newValue
         }
-
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UsersViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -39,21 +34,20 @@ class UsersAdapter(private val actionListener: UserActionListener)
 
     override fun onBindViewHolder(holder: UsersViewHolder, position: Int) {
         val user = users[position]
-        with(holder.binding){
-            holder.itemView.tag=user
-            trashBin.tag=user
-            nameSurname.text =user.name
-            occupy.text=user.occupy
-        if(user.photo.isNotBlank()){
-            user.loadPhoto(user,icon)
-        }
-            else{
-            icon.setImageResource(R.drawable.me)
-        }
+        with(holder.binding) {
+            holder.itemView.tag = user
+            trashBin.tag = user
+            nameSurname.text = user.name
+            occupy.text = user.occupy
+            if (user.photo.isNotBlank()) {
+                loadPhoto(user, icon)
+            } else {
+                icon.setImageResource(R.drawable.me)
+            }
         }
     }
 
-   private fun User.loadPhoto(user: User,imageView: ImageView)= Glide.with(imageView.context)
+    private fun loadPhoto(user: User, imageView: ImageView) = Glide.with(imageView.context)
         .load(user.photo)
         .circleCrop()
         .placeholder(R.drawable.me)
@@ -62,23 +56,22 @@ class UsersAdapter(private val actionListener: UserActionListener)
 
     override fun getItemCount(): Int = users.size
 
-
     class UsersViewHolder(
         val binding: ItemUserBinding
     ) : RecyclerView.ViewHolder(binding.root)
 
     override fun onClick(v: View) {
-        val user=v.tag as User
-        val imageButton=ImageButton(v.context)
-        imageButton.setOnClickListener{
+        val user = v.tag as User
+        val imageButton = ImageButton(v.context)
+        imageButton.setOnClickListener {
         }
-        val context=v.context
-        when(v.id){
-            R.id.trashBin ->{
+        val context = v.context
+        when (v.id) {
+            R.id.trashBin -> {
                 val indexToDelete = users.indexOfFirst { it.id == user.id }
                 actionListener.onUserDelete(user)
                 notifyItemRemoved(indexToDelete)
-                Toast.makeText(context, "Deleted", Toast.LENGTH_LONG).show();
+                Toast.makeText(context, "Deleted", Toast.LENGTH_LONG).show()
             }
         }
     }

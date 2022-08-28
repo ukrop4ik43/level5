@@ -22,21 +22,21 @@
         android:layout_marginVertical="@dimen/large"
         android:layout_marginStart="@dimen/large"
         android:backgroundTint="@color/dark_blue"
+        android:contentDescription="@string/todo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/arrow_back"
-        android:contentDescription="@string/todo" />
+        app:srcCompat="@drawable/arrow_back" />
 
     <TextView
         android:id="@+id/contacts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/large"
+        android:fontFamily="@font/font_custom"
         android:gravity="center"
         android:text="@string/contacts"
         android:textColor="@color/white"
         android:textSize="35sp"
-        android:fontFamily="@font/font_custom"
         app:layout_constraintBottom_toBottomOf="@+id/arrowBack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,22 +49,22 @@
         android:layout_marginVertical="@dimen/large"
         android:layout_marginEnd="@dimen/large"
         android:backgroundTint="@color/dark_blue"
+        android:contentDescription="@string/todo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/baseline_search"
-        android:contentDescription="@string/todo"/>
+        app:srcCompat="@drawable/baseline_search" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/dark_blue"
         android:layout_marginVertical="@dimen/large"
         android:layout_marginStart="@dimen/medium"
+        android:backgroundTint="@color/dark_blue"
         android:fontFamily="@font/font_custom"
         android:text="@string/add_contacts"
-        android:textSize="20sp"
         android:textAllCaps="false"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/UpperView"
         app:layout_constraintStart_toStartOf="parent" />
 

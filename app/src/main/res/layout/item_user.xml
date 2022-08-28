@@ -7,8 +7,7 @@
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="@dimen/mini"
     android:layout_marginVertical="@dimen/micro"
-    android:background="@drawable/border"
-    >
+    android:background="@drawable/border">
 
 
     <ImageView
@@ -17,10 +16,10 @@
         android:layout_height="50dp"
         android:layout_marginHorizontal="@dimen/mini"
         android:layout_marginVertical="@dimen/mini"
+        android:contentDescription="@string/todo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/me"
-        android:contentDescription="@string/todo" />
+        app:srcCompat="@drawable/me" />
 
 
     <TextView

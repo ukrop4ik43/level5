@@ -8,8 +8,6 @@
     tools:context=".MainActivity">
 
 
-
-
     <View
         android:id="@+id/barFirstView"
         android:layout_width="351dp"
@@ -41,6 +39,7 @@
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/AvatarImageView"
         android:layout_width="113dp"
@@ -49,7 +48,6 @@
         android:contentDescription="@string/todo"
         app:layout_constraintBottom_toTopOf="@+id/ViewBottomContainer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/nil" />
 
@@ -91,7 +89,6 @@
         android:textColor="@color/light_grey"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="@+id/CareerTextView"
-        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="@+id/CareerTextView"
         app:layout_constraintTop_toBottomOf="@+id/UserNameTextView" />
 
@@ -136,7 +133,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="@string/go_to_settings_and_fill_out_the_profile"
+        android:text="@string/go_to_settings_fill_prof"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -173,8 +170,6 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/EditProfileButton" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

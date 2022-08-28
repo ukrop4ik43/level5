@@ -18,23 +18,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         val message = intent.getStringExtra(EXTRA_MESSAGE)
         Log.d(TAG, "$message")
-        var name = addingNames(message)
-        name = name.replace(oldChar = '.', newChar = ' ', ignoreCase = false)
-        transformingName(name)
+        transformName(message)
     }
 
-    private fun transformingName(name: String) {
-        for (index in name.indices) {
-            if (name[index] == ' ') {
-                break
-            }
-        }
+    private fun transformName(message: String?) {
+        var name = addingNames(message)
+        name = name.replace(oldChar = '.', newChar = ' ', ignoreCase = false)
         binding.UserNameTextView.text = name.capitalizeWords()
     }
 
+
     private fun String.capitalizeWords() = split(" ")
         .joinToString(" ") { it -> it.lowercase().replaceFirstChar { it.uppercase() } }
-
 
 
     private fun addingNames(message: String?): String {

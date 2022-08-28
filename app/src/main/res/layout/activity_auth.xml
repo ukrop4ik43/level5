@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-
     android:layout_height="match_parent"
     android:background="@color/dark_blue"
     tools:context=".AuthActivity">
@@ -25,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/small"
-        android:text="@string/fill_out_the_profile_and_go_to_the_application"
+        android:text="@string/fill_out_the_profile"
         android:textColor="@color/white"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,8 +41,7 @@
         android:textColor="@color/light_grey"
         app:layout_constraintBottom_toTopOf="@+id/EmailEditText"
         app:layout_constraintStart_toStartOf="@+id/EmailEditText"
-        app:layout_constraintTop_toBottomOf="@+id/FillOutTextView"
-         />
+        app:layout_constraintTop_toBottomOf="@+id/FillOutTextView" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/EmailContainer"
@@ -53,9 +51,7 @@
         app:helperTextTextColor="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EmailEditText">
-
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toBottomOf="@+id/EmailEditText" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/EmailEditText"
@@ -143,7 +139,7 @@
         android:text="@string/register"
         android:textColor="@color/light_grey"
         app:backgroundTint="@color/dark_blue"
-        app:cornerRadius="8dp"
+        app:cornerRadius="@dimen/mini"
         app:layout_constraintBottom_toTopOf="@+id/TermsConditionsTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -152,13 +148,23 @@
 
     </com.google.android.material.button.MaterialButton>
 
+    <com.example.myapplication.GoogleButtonView
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginHorizontal="@dimen/medium"
+        android:layout_marginBottom="@dimen/micro"
+        app:cornerRadius="@dimen/mini"
+        app:layout_constraintBottom_toTopOf="@+id/buttonRegister"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/TermsConditionsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="76dp"
+        android:layout_marginBottom="@dimen/largest"
         android:gravity="center_horizontal"
-        android:text="@string/by_clicking_register_you_agree_to_our_terms_n_and_conditions"
+        android:text="@string/terms_n_and_conditions"
         android:textColor="@color/light_grey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -168,7 +174,7 @@
         android:id="@+id/AlreadyHaveAccountTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="@dimen/small"
         android:text="@string/already_have_account"
         android:textColor="@color/light_grey"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -179,7 +185,7 @@
         android:id="@+id/SignInTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
+        android:layout_marginStart="@dimen/mini"
         android:layout_marginEnd="132dp"
         android:layout_marginBottom="44dp"
         android:text="@string/sign_in"
@@ -187,7 +193,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/AlreadyHaveAccountTextView" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

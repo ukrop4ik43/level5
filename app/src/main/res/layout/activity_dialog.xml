@@ -26,7 +26,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/arrowBackDialog"
+            android:id="@+id/arrowBackButton"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginVertical="@dimen/large"
@@ -65,6 +65,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="80dp"
+            android:contentDescription="@string/todo"
             android:background="@drawable/roundbutton"
             app:cornerRadius="100dp"
             app:layout_constraintEnd_toEndOf="@+id/view"
@@ -78,11 +79,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/user_name"
-            app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
-            app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName" />
+            app:layout_constraintBottom_toTopOf="@+id/editTextPersonName"
+            app:layout_constraintStart_toStartOf="@+id/editTextPersonName" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/editTextPersonName"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginHorizontal="@dimen/large"
@@ -93,7 +94,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view" />
-
 
 
         <TextView
@@ -115,7 +115,7 @@
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextPersonName" />
 
 
         <TextView
@@ -138,7 +138,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextCareer" />
-
 
 
         <TextView
@@ -183,7 +182,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/phone" />
 
-
         <TextView
             android:id="@+id/textViewDate"
             android:layout_width="wrap_content"
@@ -201,7 +199,6 @@
             android:layout_marginTop="@dimen/largest"
             android:autofillHints=""
             android:ems="10"
-
             android:inputType="date"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

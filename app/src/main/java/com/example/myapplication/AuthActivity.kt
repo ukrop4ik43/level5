@@ -10,6 +10,9 @@ import android.view.View
 import android.view.WindowManager
 import android.widget.EditText
 import com.example.myapplication.Constants.LETTERS
+import com.example.myapplication.Constants.MINIMUM_EIGHT
+import com.example.myapplication.Constants.MINIMUM_ONE_LOWER
+import com.example.myapplication.Constants.MINIMUM_ONE_NUMBER
 import com.example.myapplication.Constants.NUMBERS
 import com.example.myapplication.databinding.ActivityAuthBinding
 
@@ -22,14 +25,18 @@ class AuthActivity : AppCompatActivity() {
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
         val view = binding.root
         setContentView(view)
+        setListeners()
+    }
+
+    private fun setListeners() {
         emailFocusListener()
         passFocusListener()
         setOnClickListener()
-    pressedEnter()
+        pressedEnter()
     }
 
     private fun pressedEnter() {
-        binding.PassTextEdit.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
+        binding.PassTextEdit.setOnKeyListener(View.OnKeyListener { _, keyCode, event ->
             if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
                 //Perform Code
                 sendMessage()
@@ -54,7 +61,7 @@ class AuthActivity : AppCompatActivity() {
     }
 
     private fun emailFocusListener() {
-        binding.run{
+        binding.run {
             EmailEditText.setOnFocusChangeListener { _, focused ->
                 if (!focused) {
                     EmailContainer.helperText = validEmail()
@@ -72,8 +79,6 @@ class AuthActivity : AppCompatActivity() {
     }
 
 
-
-
     private fun passFocusListener() {
         binding.PassTextEdit.setOnFocusChangeListener { _, focused ->
             if (!focused) {
@@ -85,13 +90,13 @@ class AuthActivity : AppCompatActivity() {
     private fun validPass(): String? {
         val passText = binding.PassTextEdit.text.toString()
         if (passText.length < 8) {
-            return "minimum 8 character required"
+            return MINIMUM_EIGHT
         }
         if (!passText.matches(NUMBERS.toRegex())) {
-            return "minimum 1 number required"
+            return MINIMUM_ONE_NUMBER
         }
         if (!passText.matches(LETTERS.toRegex())) {
-            return "minimum 1 lower-case letter required"
+            return MINIMUM_ONE_LOWER
         }
         return null
     }

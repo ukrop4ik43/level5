@@ -8,18 +8,24 @@
     <string name="edit_profile_button">Ред. профиль</string>
     <string name="e_mail">Е-мейл</string>
     <string name="let_s_get_acquainted">Давайте познакомимся</string>
-    <string name="fill_out_the_profile_and_go_to_the_application">Заполните профиль
+    <string name="fill_out_the_profile">Заполните профиль
         и запускайте приложение</string>
     <string name="password">Пароль</string>
     <string name="remember_me">Запомнить меня</string>
     <string name="register">Регистрация</string>
     <string name="already_have_account">Уже имеете аккаунт?</string>
     <string name="sign_in">Ввойти</string>
-    <string name="by_clicking_register_you_agree_to_our_terms_n_and_conditions">Нажимая кнопку"Регистрация"
+    <string name="terms_n_and_conditions">Нажимая кнопку"Регистрация"
         вы подтверждаете наши правила \n и условия</string>
-    <string name="go_to_settings_and_fill_out_the_profile">Идите в настройки и заполните профиль</string>
+    <string name="go_to_settings_fill_prof">Идите в настройки и заполните профиль</string>
     <string name="view_my_contacts">Посмотреть мои контакты</string>
     <string name="required">*обязательно к заполнению</string>
     <string name="invalid_email_address">Неправильный е-мейл адрес</string>
-
+    <string name="contacts">Контакты</string>
+    <string name="add_contacts">Добавить контакт</string>
+    <string name="phone">Телефон</string>
+    <string name="date_of_birth">Дата рождения</string>
+    <string name="save">СОХРАНИТЬ</string>
+    <string name="paste_url">Вставьте ссылку на изображение</string>
+    <string name="url">Ссылка:</string>
 </resources>
