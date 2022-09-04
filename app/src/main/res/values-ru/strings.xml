@@ -28,4 +28,7 @@
     <string name="save">СОХРАНИТЬ</string>
     <string name="paste_url">Вставьте ссылку на изображение</string>
     <string name="url">Ссылка:</string>
+    <string name="message">Сообщение</string>
+    <string name="profile">Профиль</string>
+
 </resources>

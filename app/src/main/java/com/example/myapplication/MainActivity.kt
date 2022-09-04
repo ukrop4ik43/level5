@@ -5,16 +5,16 @@ import android.os.Bundle
 import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.util.Log
 import com.example.myapplication.Constants.DOG_SIGN
-
-import com.example.myapplication.databinding.ActivityMainBinding
+ 
+import com.example.myapplication.databinding.DetailViewBinding
 
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: DetailViewBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = DetailViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val message = intent.getStringExtra(EXTRA_MESSAGE)
         Log.d(TAG, "$message")

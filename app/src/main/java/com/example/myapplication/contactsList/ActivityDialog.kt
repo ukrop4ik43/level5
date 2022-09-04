@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.contactsList
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.core.os.bundleOf
 import androidx.fragment.app.DialogFragment
+import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityDialogBinding
 
 class ActivityDialog : DialogFragment() {
@@ -22,8 +23,6 @@ class ActivityDialog : DialogFragment() {
         layoutInflater.inflate(R.layout.activity_dialog, null)
         return AlertDialog.Builder(requireContext())
             .setCancelable(true)
-            .setIcon(R.mipmap.ic_launcher_round)
-            .setTitle("Title")
             .create()
     }
 

@@ -1,9 +1,10 @@
-package com.example.myapplication
+package com.example.myapplication.contactsList
 
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.example.myapplication.R
 import com.example.myapplication.databinding.GoogleButtonLayoutBinding
 
 class GoogleButtonView(
@@ -43,11 +44,9 @@ class GoogleButtonView(
             defStyleAttr,
             defStyleRes
         )
-        with(binding) {
-            val googleButtonText =
-                typedArray.getString(R.styleable.GoogleButtonView_googleButtontext)
-            binding.textViewGoogle.text = googleButtonText ?: "GOOGLE"
-        }
+        val googleButtonText =
+            typedArray.getString(R.styleable.GoogleButtonView_googleButtontext)
+        binding.textViewGoogle.text = googleButtonText ?: "GOOGLE"
         typedArray.recycle()
     }
 }

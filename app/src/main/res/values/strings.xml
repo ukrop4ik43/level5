@@ -26,5 +26,8 @@
     <string name="save">SAVE</string>
     <string name="paste_url">Paste url of image</string>
     <string name="url">URL</string>
+    <string name="message">Message</string>
+    <string name="profile">Profile</string>
+
 
 </resources>

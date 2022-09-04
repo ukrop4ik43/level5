@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.contactsList
 
 import android.app.Application
 import com.example.myapplication.model.UsersService

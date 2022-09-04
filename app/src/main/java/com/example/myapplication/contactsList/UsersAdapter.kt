@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.contactsList
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.myapplication.R
 import com.example.myapplication.databinding.ItemUserBinding
 import com.example.myapplication.model.User
 
@@ -19,6 +20,7 @@ interface UserActionListener {
 class UsersAdapter(private val actionListener: UserActionListener) :
     RecyclerView.Adapter<UsersAdapter.UsersViewHolder>(), View.OnClickListener {
 
+
     var users: List<User> = emptyList()
         set(newValue) {
             field = newValue
@@ -27,38 +29,32 @@ class UsersAdapter(private val actionListener: UserActionListener) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UsersViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemUserBinding.inflate(inflater, parent, false)
-        binding.trashBin.setOnClickListener(this)
+        binding.trashBinIB.setOnClickListener(this)
         return UsersViewHolder(binding)
-
     }
 
     override fun onBindViewHolder(holder: UsersViewHolder, position: Int) {
         val user = users[position]
         with(holder.binding) {
             holder.itemView.tag = user
-            trashBin.tag = user
-            nameSurname.text = user.name
-            occupy.text = user.occupy
+            trashBinIB.tag = user
+            nameSurnameTV.text = user.name
+            careerTV.text = user.occupy
             if (user.photo.isNotBlank()) {
-                loadPhoto(user, icon)
+                avatarIV.addImage(user)
             } else {
-                icon.setImageResource(R.drawable.me)
+                avatarIV.setImageResource(R.drawable.me)
             }
         }
-    }
 
-    private fun loadPhoto(user: User, imageView: ImageView) = Glide.with(imageView.context)
-        .load(user.photo)
-        .circleCrop()
-        .placeholder(R.drawable.me)
-        .error(R.drawable.me)
-        .into(imageView)
+    }
 
     override fun getItemCount(): Int = users.size
 
     class UsersViewHolder(
         val binding: ItemUserBinding
-    ) : RecyclerView.ViewHolder(binding.root)
+    ) : RecyclerView.ViewHolder(binding.root){
+    }
 
     override fun onClick(v: View) {
         val user = v.tag as User
@@ -67,7 +63,7 @@ class UsersAdapter(private val actionListener: UserActionListener) :
         }
         val context = v.context
         when (v.id) {
-            R.id.trashBin -> {
+            R.id.trashBinIB -> {
                 val indexToDelete = users.indexOfFirst { it.id == user.id }
                 actionListener.onUserDelete(user)
                 notifyItemRemoved(indexToDelete)
@@ -75,4 +71,14 @@ class UsersAdapter(private val actionListener: UserActionListener) :
             }
         }
     }
+}
+
+
+private fun ImageView.addImage(user: User) {
+    Glide.with(this.context)
+        .load(user.photo)
+        .circleCrop()
+        .placeholder(R.drawable.me)
+        .error(R.drawable.me)
+        .into(this)
 }

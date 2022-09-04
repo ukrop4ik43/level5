@@ -15,7 +15,8 @@ class UsersService {
                 0,
                 "https://klike.net/uploads/posts/2019-03/medium/1551512888_2.jpg",
                 "Mirinda",
-                "Director"
+                "Director",
+                "America"
             )
         )
         users.add(
@@ -24,7 +25,8 @@ class UsersService {
                 1,
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7jjlSA45DfwCA11HmIjEa4tNvdE2uq8rtHVrfkga2Co4jw3ZoR3IT17zG5m2ZK2cjii4&usqp=CAU",
                 "Nirinda",
-                "Direct"
+                "Direct",
+                "UK"
             )
         )
         users.add(
@@ -33,7 +35,8 @@ class UsersService {
                 2,
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ27yNHVDFInW5N1RYi9dt02vbzpYHnne5xIA&usqp=CAU",
                 "Miri",
-                "Dictor"
+                "Dictor",
+                "Ukraine"
             )
         )
         users.add(
@@ -42,7 +45,8 @@ class UsersService {
                 3,
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/800px-Image_created_with_a_mobile_phone.png",
                 "Nil",
-                "It"
+                "It",
+                "Lapland"
             )
         )
 
@@ -58,8 +62,8 @@ class UsersService {
     }
 
 
-    fun addUser(name: String, occupy: String, photo: String) {
-        users.add(users.size, User(users.size.toLong(), photo, name, occupy))
+    fun addUser(name: String, occupy: String, photo: String,address:String) {
+        users.add(users.size, User(users.size.toLong(), photo, name, occupy,address))
 
     }
 

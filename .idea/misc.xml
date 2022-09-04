@@ -12,6 +12,7 @@
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_baseline_delete_outline_24.xml" value="0.124" />
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_google__g__logo_svg.xml" value="0.132" />
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1905" />
+        <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/my_drawable.xml" value="0.1" />
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/round_google.xml" value="0.1" />
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/roundbutton.xml" value="0.16" />
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/trash.xml" value="0.1425" />
@@ -23,11 +24,16 @@
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_imagechooser.xml" value="0.264" />
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.176" />
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_recycler.xml" value="0.152" />
+        <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_third_level_start.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/detail_view.xml" value="0.15520833333333334" />
+        <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_item_detail.xml" value="0.2" />
+        <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_start.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/google_button_layout.xml" value="0.16" />
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/item_user.xml" value="0.4" />
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/my_contacts_layout.xml" value="0.2" />
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/new_lay.xml" value="0.15520833333333334" />
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/test_lay.xml" value="0.264" />
+        <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/third_level_start_activity.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1905" />
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1905" />
       </map>

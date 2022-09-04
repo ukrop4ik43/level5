@@ -11,67 +11,54 @@
 
 
     <ImageView
-        android:id="@+id/icon"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginHorizontal="@dimen/mini"
+        android:id="@+id/avatarIV"
+        android:layout_width="@dimen/recyclerview_image_size"
+        android:layout_height="@dimen/recyclerview_image_size"
         android:layout_marginVertical="@dimen/mini"
+        android:layout_marginStart="@dimen/medium"
         android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/me" />
 
 
     <TextView
-        android:id="@+id/nameSurname"
+        android:id="@+id/nameSurnameTV"
         android:layout_width="0dp"
-        android:layout_height="19dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="@dimen/medium"
-        android:layout_marginTop="12dp"
         android:ellipsize="end"
         android:lines="1"
-        android:text="Name Surname"
+        android:layout_marginTop="@dimen/mini"
+        tools:text="Name Surname"
         android:textColor="@color/black"
         android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/icon"
+        app:layout_constraintStart_toEndOf="@+id/avatarIV"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/occupy"
-        android:layout_width="230dp"
-        android:layout_height="20dp"
+        android:id="@+id/careerTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="@dimen/medium"
-        android:layout_marginTop="@dimen/micro"
         android:ellipsize="end"
         android:lines="1"
         android:textColor="@color/light_grey"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/icon"
-        app:layout_constraintTop_toBottomOf="@+id/nameSurname"
+        app:layout_constraintStart_toEndOf="@+id/avatarIV"
+        app:layout_constraintTop_toBottomOf="@+id/nameSurnameTV"
         tools:text="career" />
 
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/barrier"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:barrierDirection="bottom"
-        app:constraint_referenced_ids="icon,occupy"
-        tools:layout_editor_absoluteY="58dp" />
-
-    <Space
-        android:id="@+id/space"
-        android:layout_width="wrap_content"
-        android:layout_height="6dp"
-        app:layout_constraintTop_toBottomOf="@+id/barrier" />
 
     <ImageButton
-        android:id="@+id/trashBin"
-        android:layout_width="51dp"
-        android:layout_height="47dp"
-        android:layout_marginVertical="@dimen/micro"
+        android:id="@+id/trashBinIB"
+        android:layout_width="@dimen/recyclerview_image_size"
+        android:layout_height="@dimen/recyclerview_image_size"
         android:layout_marginEnd="@dimen/medium"
+        android:layout_marginVertical="@dimen/mini"
         android:backgroundTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
