@@ -8,7 +8,7 @@
     tools:context=".AuthActivity">
 
     <TextView
-        android:id="@+id/aсquaintedTextView"
+        android:id="@+id/aсquaintedTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/FillOutTextView"
+        android:id="@+id/fillOutTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/small"
@@ -29,32 +29,32 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aсquaintedTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/aсquaintedTV" />
 
     <TextView
-        android:id="@+id/EmailTextView"
+        android:id="@+id/emailTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/large"
         android:layout_marginBottom="1dp"
         android:text="@string/e_mail"
         android:textColor="@color/light_grey"
-        app:layout_constraintBottom_toTopOf="@+id/EmailEditText"
-        app:layout_constraintStart_toStartOf="@+id/EmailEditText"
-        app:layout_constraintTop_toBottomOf="@+id/FillOutTextView" />
+        app:layout_constraintBottom_toTopOf="@+id/emailET"
+        app:layout_constraintStart_toStartOf="@+id/emailET"
+        app:layout_constraintTop_toBottomOf="@+id/fillOutTV" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/EmailContainer"
+        android:id="@+id/emailContainer"
         android:layout_width="331dp"
         android:layout_height="wrap_content"
         app:helperText="@string/required"
         app:helperTextTextColor="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EmailEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/emailET" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/EmailEditText"
+        android:id="@+id/emailET"
         android:layout_width="331dp"
         android:layout_height="49dp"
         android:layout_marginTop="68dp"
@@ -63,7 +63,7 @@
         android:textColor="@color/light_grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/FillOutTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/fillOutTV" />
 
     <View
         android:id="@+id/barFirstView"
@@ -71,33 +71,33 @@
         android:layout_height="1dp"
         android:layout_marginBottom="4dp"
         android:background="@color/light_grey"
-        app:layout_constraintBottom_toBottomOf="@+id/EmailEditText"
+        app:layout_constraintBottom_toBottomOf="@+id/emailET"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/PasswordTextView"
+        android:id="@+id/passwordTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="264dp"
         android:text="@string/password"
         android:textColor="@color/light_grey"
-        app:layout_constraintBottom_toTopOf="@+id/PassTextEdit"
-        app:layout_constraintStart_toStartOf="@+id/PassTextEdit"
+        app:layout_constraintBottom_toTopOf="@+id/passTE"
+        app:layout_constraintStart_toStartOf="@+id/passTE"
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/BarSecondView"
+        android:id="@+id/barSecondView"
         android:layout_width="329dp"
         android:layout_height="1dp"
         android:layout_marginBottom="6dp"
         android:background="@color/light_grey"
-        app:layout_constraintBottom_toBottomOf="@+id/PassTextEdit"
+        app:layout_constraintBottom_toBottomOf="@+id/passTE"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/PassTextEdit"
+        android:id="@+id/passTE"
         android:layout_width="331dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
@@ -109,14 +109,14 @@
         app:layout_constraintTop_toBottomOf="@+id/barFirstView" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/PassContainer"
+        android:id="@+id/passContainer"
         android:layout_width="331dp"
         android:layout_height="wrap_content"
         app:helperText="@string/required"
         app:helperTextTextColor="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BarSecondView">
+        app:layout_constraintTop_toBottomOf="@+id/barSecondView">
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -127,11 +127,11 @@
         android:layout_marginTop="@dimen/largest"
         android:text="@string/remember_me"
         android:textColor="@color/light_grey"
-        app:layout_constraintStart_toStartOf="@+id/PassTextEdit"
-        app:layout_constraintTop_toBottomOf="@+id/PassTextEdit" />
+        app:layout_constraintStart_toStartOf="@+id/passTE"
+        app:layout_constraintTop_toBottomOf="@+id/passTE" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/buttonRegister"
+        android:id="@+id/registerB"
         android:layout_width="0dp"
         android:layout_height="71dp"
         android:layout_marginHorizontal="@dimen/medium"
@@ -140,7 +140,7 @@
         android:textColor="@color/light_grey"
         app:backgroundTint="@color/dark_blue"
         app:cornerRadius="@dimen/mini"
-        app:layout_constraintBottom_toTopOf="@+id/TermsConditionsTextView"
+        app:layout_constraintBottom_toTopOf="@+id/termsConditionsTV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:strokeColor="@color/orange"
@@ -148,18 +148,18 @@
 
     </com.google.android.material.button.MaterialButton>
 
-    <com.example.myapplication.GoogleButtonView
+    <com.example.myapplication.CustomView.GoogleButtonView
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:layout_marginHorizontal="@dimen/medium"
         android:layout_marginBottom="@dimen/micro"
         app:cornerRadius="@dimen/mini"
-        app:layout_constraintBottom_toTopOf="@+id/buttonRegister"
+        app:layout_constraintBottom_toTopOf="@+id/registerB"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/TermsConditionsTextView"
+        android:id="@+id/termsConditionsTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/largest"
@@ -171,7 +171,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/AlreadyHaveAccountTextView"
+        android:id="@+id/alreadyHaveAccountTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/small"
@@ -182,7 +182,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/SignInTextView"
+        android:id="@+id/signInTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/mini"
@@ -192,7 +192,7 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/AlreadyHaveAccountTextView" />
+        app:layout_constraintStart_toEndOf="@+id/alreadyHaveAccountTV" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

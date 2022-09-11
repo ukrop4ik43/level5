@@ -15,23 +15,18 @@ import com.example.myapplication.model.UsersService
 import com.example.myapplication.model.usersListener
 
 
-/**
- * A simple [Fragment] subclass.
- * Use the [startFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class startFragment : Fragment() {
+class StartFragment : Fragment() {
 
     private lateinit var adapter: UsersAdapter
 
     private val usersService: UsersService
-        get() = (requireContext() as App).UsersService
+        get() = (requireContext() as App).usersService
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view=inflater.inflate(R.layout.fragment_start, container, false)
-       var recyclerView=view.findViewById<RecyclerView>(R.id.recyclerView)
+       val recyclerView=view.findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.setHasFixedSize(true)
         adapter = UsersAdapter(object : UserActionListener {
             override fun onUserDelete(user: User) {
@@ -40,7 +35,6 @@ class startFragment : Fragment() {
         })
         recyclerView.layoutManager=LinearLayoutManager(activity)
         recyclerView.adapter=adapter
-        // Inflate the layout for this fragment
         return view
     }
     override fun onDestroy() {

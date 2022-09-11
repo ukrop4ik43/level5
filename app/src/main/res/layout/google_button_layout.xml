@@ -11,34 +11,34 @@
         android:id="@+id/buttonView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         android:background="@drawable/round_google"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewGoogle"
+        android:id="@+id/googleTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
-        android:text="GOOGLE"
+        android:text="@string/google"
         android:textColor="@color/black"
-        android:textSize="@dimen/largest"
+        android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="@+id/buttonView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageViewGoogle"
+        android:id="@+id/googleIV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/largest"
         app:layout_constraintBottom_toBottomOf="@+id/buttonView"
         app:layout_constraintStart_toStartOf="@+id/buttonView"
         app:layout_constraintTop_toTopOf="@+id/buttonView"
-        app:srcCompat="@drawable/google_logo" />
+        app:srcCompat="@drawable/google_logo"
+        android:contentDescription="@string/todo" />
 
 
 </merge>

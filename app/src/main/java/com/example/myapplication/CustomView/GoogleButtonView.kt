@@ -1,4 +1,4 @@
-package com.example.myapplication.contactsList
+package com.example.myapplication.CustomView
 
 import android.content.Context
 import android.util.AttributeSet
@@ -46,7 +46,7 @@ class GoogleButtonView(
         )
         val googleButtonText =
             typedArray.getString(R.styleable.GoogleButtonView_googleButtontext)
-        binding.textViewGoogle.text = googleButtonText ?: "GOOGLE"
+        binding.googleTV.text = googleButtonText ?: "GOOGLE"
         typedArray.recycle()
     }
 }

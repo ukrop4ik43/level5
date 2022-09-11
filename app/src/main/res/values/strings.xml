@@ -28,6 +28,7 @@
     <string name="url">URL</string>
     <string name="message">Message</string>
     <string name="profile">Profile</string>
+    <string name="google">GOOGLE</string>
 
 
 </resources>

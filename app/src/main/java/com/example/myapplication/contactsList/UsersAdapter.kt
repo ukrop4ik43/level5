@@ -4,12 +4,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ItemUserBinding
+import com.example.myapplication.extensions.addImage
 import com.example.myapplication.model.User
 
 
@@ -74,11 +73,4 @@ class UsersAdapter(private val actionListener: UserActionListener) :
 }
 
 
-private fun ImageView.addImage(user: User) {
-    Glide.with(this.context)
-        .load(user.photo)
-        .circleCrop()
-        .placeholder(R.drawable.me)
-        .error(R.drawable.me)
-        .into(this)
-}
+

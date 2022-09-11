@@ -1,14 +1,19 @@
-package com.example.myapplication.contactsList
+package com.example.myapplication.activity
 
 import android.app.Dialog
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.myapplication.R
+import com.example.myapplication.contactsList.App
+import com.example.myapplication.contactsList.UserActionListener
+import com.example.myapplication.contactsList.UsersAdapter
+import com.example.myapplication.databinding.ActivityDialogBinding
 import com.example.myapplication.databinding.MyContactsLayoutBinding
 import com.example.myapplication.model.User
 import com.example.myapplication.model.UsersService
@@ -19,15 +24,17 @@ class MyContactsActivity : AppCompatActivity() {
     private lateinit var chooseImage: String
     private lateinit var adapter: UsersAdapter
     private lateinit var binding: MyContactsLayoutBinding
+    private lateinit var dialogBinding: ActivityDialogBinding
 
 
     private val usersService: UsersService
-        get() = (applicationContext as App).UsersService
+        get() = (applicationContext as App).usersService
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = MyContactsLayoutBinding.inflate(layoutInflater)
+        dialogBinding= ActivityDialogBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setAdapterAndLayoutManager()
         setListeners()
@@ -40,14 +47,14 @@ class MyContactsActivity : AppCompatActivity() {
             val dialog = Dialog(this)
             dialog.setCancelable(false)
             dialog.setContentView(R.layout.activity_dialog)
-            val imageView: ImageView = dialog.findViewById(R.id.AvatarImageViewInDialog)
-            dialog.findViewById<ImageButton>(R.id.arrowBackButton).setOnClickListener {
+            val imageView: ImageView = dialogBinding.avatarInDialogIV
+            dialogBinding.arrowBackB.setOnClickListener {
                 dialog.dismiss()
             }
-            dialog.findViewById<Button>(R.id.saveButton).setOnClickListener {
+            dialogBinding.saveB.setOnClickListener {
                 saveButtonListener(dialog)
             }
-            dialog.findViewById<ImageButton>(R.id.addPhotoImageButton).setOnClickListener {
+            dialogBinding.addPhotoIB.setOnClickListener {
                 generateRandomImage(imageView)
             }
             dialog.show()
@@ -55,9 +62,9 @@ class MyContactsActivity : AppCompatActivity() {
     }
 
     private fun saveButtonListener(dialog: Dialog) {
-        if (dialog.findViewById<EditText>(R.id.editTextPersonName).text.toString() != "" &&
-            dialog.findViewById<EditText>(R.id.editTextCareer).text.toString() != ""
-            && dialog.findViewById<EditText>(R.id.editTextTextPostalAddress).text.toString() != ""
+        if (dialogBinding.personNameET.text.toString() != "" &&
+            dialogBinding.careerET.text.toString() != ""
+            && dialogBinding.postalAddressET.text.toString() != ""
             && ::chooseImage.isInitialized
         ) {
             saveButtonAction(dialog)
@@ -72,9 +79,9 @@ class MyContactsActivity : AppCompatActivity() {
 
     private fun saveButtonAction(dialog: Dialog) {
         usersService.addUser(
-            dialog.findViewById<EditText>(R.id.editTextPersonName).text.toString(),
-            dialog.findViewById<EditText>(R.id.editTextCareer).text.toString(),
-            chooseImage,dialog.findViewById<EditText>(R.id.editTextTextPostalAddress).text.toString()
+            dialogBinding.personNameET.text.toString(),
+            dialogBinding.careerET.text.toString(),
+            chooseImage,dialogBinding.postalAddressET.text.toString()
         )
         adapter.notifyItemInserted(usersService.getSize() - 1)
         dialog.dismiss()
@@ -90,7 +97,7 @@ class MyContactsActivity : AppCompatActivity() {
         binding.recyclerView.layoutManager = layoutManager
         binding.recyclerView.adapter = adapter
         val dividerItemDecoration = DividerItemDecoration(this, RecyclerView.VERTICAL)
-        dividerItemDecoration.setDrawable(resources.getDrawable(R.drawable.my_drawable))
+        dividerItemDecoration.setDrawable(ResourcesCompat.getDrawable(resources,R.drawable.my_drawable,null)!!)
         binding.recyclerView.addItemDecoration(dividerItemDecoration)
     }
 

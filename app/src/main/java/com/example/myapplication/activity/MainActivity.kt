@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     private fun transformName(message: String?) {
         var name = addingNames(message)
         name = name.replace(oldChar = '.', newChar = ' ', ignoreCase = false)
-        binding.UserNameTextView.text = name.capitalizeWords()
+        binding.detailUserNameTV.text = name.capitalizeWords()
     }
 
 

@@ -14,6 +14,7 @@ import com.example.myapplication.Constants.MINIMUM_EIGHT
 import com.example.myapplication.Constants.MINIMUM_ONE_LOWER
 import com.example.myapplication.Constants.MINIMUM_ONE_NUMBER
 import com.example.myapplication.Constants.NUMBERS
+import com.example.myapplication.activity.MainActivity
 import com.example.myapplication.databinding.ActivityAuthBinding
 
 class AuthActivity : AppCompatActivity() {
@@ -36,7 +37,7 @@ class AuthActivity : AppCompatActivity() {
     }
 
     private fun pressedEnter() {
-        binding.PassTextEdit.setOnKeyListener(View.OnKeyListener { _, keyCode, event ->
+        binding.passTE.setOnKeyListener(View.OnKeyListener { _, keyCode, event ->
             if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
                 //Perform Code
                 sendMessage()
@@ -47,14 +48,14 @@ class AuthActivity : AppCompatActivity() {
     }
 
     private fun setOnClickListener() {
-        binding.buttonRegister.setOnClickListener { sendMessage() }
+        binding.registerB.setOnClickListener { sendMessage() }
     }
 
     private fun sendMessage() {
-        val editText = findViewById<EditText>(R.id.EmailEditText)
-        val emaill = editText.text.toString()
+        val editText = findViewById<EditText>(R.id.emailET)
+        val emailVal = editText.text.toString()
         val intent = Intent(this, MainActivity::class.java).apply {
-            putExtra(EXTRA_MESSAGE, emaill)
+            putExtra(EXTRA_MESSAGE, emailVal)
         }
         startActivity(intent)
         finish()
@@ -62,16 +63,16 @@ class AuthActivity : AppCompatActivity() {
 
     private fun emailFocusListener() {
         binding.run {
-            EmailEditText.setOnFocusChangeListener { _, focused ->
+            emailET.setOnFocusChangeListener { _, focused ->
                 if (!focused) {
-                    EmailContainer.helperText = validEmail()
+                    emailContainer.helperText = validEmail()
                 }
             }
         }
     }
 
     private fun validEmail(): String? {
-        val emailText = binding.EmailEditText.text.toString()
+        val emailText = binding.emailET.text.toString()
         if (!Patterns.EMAIL_ADDRESS.matcher(emailText).matches()) {
             return getString(R.string.invalid_email_address)
         }
@@ -80,15 +81,15 @@ class AuthActivity : AppCompatActivity() {
 
 
     private fun passFocusListener() {
-        binding.PassTextEdit.setOnFocusChangeListener { _, focused ->
+        binding.passTE.setOnFocusChangeListener { _, focused ->
             if (!focused) {
-                binding.PassContainer.helperText = validPass()
+                binding.passContainer.helperText = validPass()
             }
         }
     }
 
     private fun validPass(): String? {
-        val passText = binding.PassTextEdit.text.toString()
+        val passText = binding.passTE.text.toString()
         if (passText.length < 8) {
             return MINIMUM_EIGHT
         }

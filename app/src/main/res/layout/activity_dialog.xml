@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -15,7 +14,7 @@
 
 
         <View
-            android:id="@+id/view"
+            android:id="@+id/viewUpperBlue"
             android:layout_width="0dp"
             android:layout_height="200dp"
             android:background="@color/dark_blue"
@@ -26,7 +25,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/arrowBackButton"
+            android:id="@+id/arrowBackB"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginVertical="@dimen/large"
@@ -38,7 +37,7 @@
             app:srcCompat="@drawable/arrow_back" />
 
         <TextView
-            android:id="@+id/textViewAddContacts"
+            android:id="@+id/addContactsTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/large"
@@ -50,7 +49,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/AvatarImageViewInDialog"
+            android:id="@+id/avatarInDialogIV"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginTop="80dp"
@@ -61,29 +60,29 @@
             app:srcCompat="@drawable/me" />
 
         <ImageButton
-            android:id="@+id/addPhotoImageButton"
+            android:id="@+id/addPhotoIB"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="80dp"
-            android:contentDescription="@string/todo"
             android:background="@drawable/roundbutton"
+            android:contentDescription="@string/todo"
             app:cornerRadius="100dp"
-            app:layout_constraintEnd_toEndOf="@+id/view"
-            app:layout_constraintStart_toEndOf="@+id/AvatarImageViewInDialog"
+            app:layout_constraintEnd_toEndOf="@+id/viewUpperBlue"
+            app:layout_constraintStart_toEndOf="@+id/avatarInDialogIV"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_baseline_add_a_photo_24" />
 
 
         <TextView
-            android:id="@+id/userName"
+            android:id="@+id/userNameTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/user_name"
-            app:layout_constraintBottom_toTopOf="@+id/editTextPersonName"
-            app:layout_constraintStart_toStartOf="@+id/editTextPersonName" />
+            app:layout_constraintBottom_toTopOf="@+id/personNameET"
+            app:layout_constraintStart_toStartOf="@+id/personNameET" />
 
         <EditText
-            android:id="@+id/editTextPersonName"
+            android:id="@+id/personNameET"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginHorizontal="@dimen/large"
@@ -93,19 +92,19 @@
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view" />
+            app:layout_constraintTop_toBottomOf="@+id/viewUpperBlue" />
 
 
         <TextView
-            android:id="@+id/occupyText"
+            android:id="@+id/occupyTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/occupy"
-            app:layout_constraintBottom_toTopOf="@+id/editTextCareer"
-            app:layout_constraintStart_toStartOf="@+id/editTextCareer" />
+            app:layout_constraintBottom_toTopOf="@+id/careerET"
+            app:layout_constraintStart_toStartOf="@+id/careerET" />
 
         <EditText
-            android:id="@+id/editTextCareer"
+            android:id="@+id/careerET"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginHorizontal="@dimen/large"
@@ -115,19 +114,19 @@
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextPersonName" />
+            app:layout_constraintTop_toBottomOf="@+id/personNameET" />
 
 
         <TextView
-            android:id="@+id/emailText"
+            android:id="@+id/emailDialogTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/e_mail"
-            app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress3"
-            app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress3" />
+            app:layout_constraintBottom_toTopOf="@+id/emailAddressET"
+            app:layout_constraintStart_toStartOf="@+id/emailAddressET" />
 
         <EditText
-            android:id="@+id/editTextTextEmailAddress3"
+            android:id="@+id/emailAddressET"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginHorizontal="@dimen/large"
@@ -137,19 +136,19 @@
             android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextCareer" />
+            app:layout_constraintTop_toBottomOf="@+id/careerET" />
 
 
         <TextView
-            android:id="@+id/textViewPhone"
+            android:id="@+id/phoneTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/phone"
-            app:layout_constraintBottom_toTopOf="@+id/phone"
-            app:layout_constraintStart_toStartOf="@+id/phone" />
+            app:layout_constraintBottom_toTopOf="@+id/phoneET"
+            app:layout_constraintStart_toStartOf="@+id/phoneET" />
 
         <EditText
-            android:id="@+id/phone"
+            android:id="@+id/phoneET"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginHorizontal="@dimen/large"
@@ -159,18 +158,18 @@
             android:inputType="phone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress3" />
+            app:layout_constraintTop_toBottomOf="@+id/emailAddressET" />
 
         <TextView
-            android:id="@+id/textViewHomeAdress"
+            android:id="@+id/homeAddressTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/address"
-            app:layout_constraintBottom_toTopOf="@+id/editTextTextPostalAddress"
-            app:layout_constraintStart_toStartOf="@+id/editTextTextPostalAddress" />
+            app:layout_constraintBottom_toTopOf="@+id/postalAddressET"
+            app:layout_constraintStart_toStartOf="@+id/postalAddressET" />
 
         <EditText
-            android:id="@+id/editTextTextPostalAddress"
+            android:id="@+id/postalAddressET"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginHorizontal="@dimen/large"
@@ -180,19 +179,19 @@
             android:inputType="textPostalAddress"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/phone" />
+            app:layout_constraintTop_toBottomOf="@+id/phoneET" />
 
         <TextView
-            android:id="@+id/textViewDate"
+            android:id="@+id/dateTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/date_of_birth"
-            app:layout_constraintBottom_toTopOf="@+id/editTextDate"
-            app:layout_constraintStart_toStartOf="@+id/editTextDate" />
+            app:layout_constraintBottom_toTopOf="@+id/dateET"
+            app:layout_constraintStart_toStartOf="@+id/dateET" />
 
 
         <EditText
-            android:id="@+id/editTextDate"
+            android:id="@+id/dateET"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginHorizontal="@dimen/large"
@@ -202,10 +201,10 @@
             android:inputType="date"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPostalAddress" />
+            app:layout_constraintTop_toBottomOf="@+id/postalAddressET" />
 
         <Button
-            android:id="@+id/saveButton"
+            android:id="@+id/saveB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/large"
@@ -215,7 +214,7 @@
             android:text="@string/save"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+            app:layout_constraintTop_toBottomOf="@+id/dateET" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

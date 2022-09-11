@@ -3,70 +3,73 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@color/dark_blue"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
 
-    <View
-        android:id="@+id/barFirstView"
-        android:layout_width="351dp"
-        android:layout_height="263dp"
-        android:background="@color/dark_blue"
-        app:layout_constraintBottom_toTopOf="@id/ViewBottomContainer"
-        app:layout_constraintEnd_toEndOf="parent"
+    <ImageButton
+        android:id="@+id/arrowBackB"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginVertical="@dimen/large"
+        android:layout_marginStart="@dimen/large"
+        android:backgroundTint="@color/dark_blue"
+        android:contentDescription="@string/todo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_weight="0.5" />
+        app:srcCompat="@drawable/arrow_back" />
 
     <View
-        android:id="@+id/ViewBottomContainer"
+        android:id="@+id/bottomContainerV"
         android:layout_width="wrap_content"
         android:layout_height="309dp"
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintVertical_weight="0.5" />
 
     <TextView
-        android:id="@+id/SettingsTextView"
+        android:id="@+id/ProfileTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="@dimen/medium"
-        android:text="@string/settings"
+        android:text="@string/profile"
         android:textColor="@color/white"
         android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/AvatarImageView"
-        android:layout_width="113dp"
-        android:layout_height="113dp"
-        android:layout_marginBottom="132dp"
+        android:id="@+id/detailAvatarIV"
+        android:layout_width="@dimen/detail_view_image"
+        android:layout_height="@dimen/detail_view_image"
+        android:layout_marginBottom="@dimen/detail_view_image"
         android:contentDescription="@string/todo"
-        app:layout_constraintBottom_toTopOf="@+id/ViewBottomContainer"
+        app:layout_constraintBottom_toTopOf="@+id/bottomContainerV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/nil" />
+        app:srcCompat="@drawable/nil_image" />
 
     <TextView
-        android:id="@+id/UserNameTextView"
-        android:layout_width="181dp"
-        android:layout_height="50dp"
+        android:id="@+id/detailUserNameTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/medium"
         android:fontFamily="@font/font_custom"
         android:gravity="center"
         android:text="@string/user_name"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/AvatarImageView"
-        app:layout_constraintStart_toStartOf="@+id/AvatarImageView"
-        app:layout_constraintTop_toBottomOf="@+id/AvatarImageView" />
+        app:layout_constraintEnd_toEndOf="@+id/detailAvatarIV"
+        app:layout_constraintStart_toStartOf="@+id/detailAvatarIV"
+        app:layout_constraintTop_toBottomOf="@+id/detailAvatarIV" />
 
     <TextView
-        android:id="@+id/CareerTextView"
+        android:id="@+id/detailCareerTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/font_custom"
@@ -74,42 +77,42 @@
         android:text="@string/occupy"
         android:textColor="@color/light_grey"
         android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@+id/UserNameTextView"
-        app:layout_constraintStart_toStartOf="@+id/UserNameTextView"
-        app:layout_constraintTop_toBottomOf="@+id/UserNameTextView" />
+        app:layout_constraintEnd_toEndOf="@+id/detailUserNameTV"
+        app:layout_constraintStart_toStartOf="@+id/detailUserNameTV"
+        app:layout_constraintTop_toBottomOf="@+id/detailUserNameTV" />
 
     <TextView
         android:id="@+id/HomeAddressTextView"
-        android:layout_width="184dp"
-        android:layout_height="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/large"
         android:fontFamily="@font/font_custom"
         android:gravity="center"
         android:text="@string/address"
         android:textColor="@color/light_grey"
         android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@+id/CareerTextView"
-        app:layout_constraintStart_toStartOf="@+id/CareerTextView"
-        app:layout_constraintTop_toBottomOf="@+id/UserNameTextView" />
+        app:layout_constraintEnd_toEndOf="@+id/detailCareerTV"
+        app:layout_constraintStart_toStartOf="@+id/detailCareerTV"
+        app:layout_constraintTop_toBottomOf="@+id/detailUserNameTV" />
 
     <ImageView
         android:id="@+id/FacebookImageView"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="92dp"
+        android:layout_width="@dimen/social_messengers_size"
+        android:layout_height="@dimen/social_messengers_size"
+        android:layout_marginStart="@dimen/social_messengers_size"
         android:layout_marginEnd="@dimen/large"
         android:contentDescription="@string/todo"
         app:layout_constraintEnd_toStartOf="@+id/LinkedInImageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/LinkedInImageView"
-        app:srcCompat="@drawable/fac" />
+        app:srcCompat="@drawable/facebook_image" />
 
     <ImageView
         android:id="@+id/VKImageView"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="@dimen/social_messengers_size"
+        android:layout_height="@dimen/social_messengers_size"
         android:layout_marginStart="@dimen/large"
-        android:layout_marginEnd="92dp"
+        android:layout_marginEnd="@dimen/social_messengers_size"
         android:contentDescription="@string/todo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/LinkedInImageView"
@@ -118,58 +121,28 @@
 
     <ImageView
         android:id="@+id/LinkedInImageView"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="68dp"
+        android:layout_width="@dimen/social_messengers_size"
+        android:layout_height="@dimen/social_messengers_size"
+        android:layout_marginTop="@dimen/social_messengers_size"
         android:contentDescription="@string/todo"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ViewBottomContainer"
-        app:srcCompat="@drawable/in" />
-
-    <TextView
-        android:id="@+id/GoToSettingsTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/go_to_settings_fill_prof"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LinkedInImageView" />
-
-    <Button
-        android:id="@+id/EditProfileButton"
-        android:layout_width="0dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="@dimen/small"
-        android:layout_marginEnd="@dimen/medium"
-        android:backgroundTint="@color/white"
-        android:fontFamily="@font/font_custom"
-        android:text="@string/edit_profile_button"
-        android:textColor="@color/black"
-        app:cornerRadius="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/GoToSettingsTextView"
-        app:strokeColor="@color/black"
-        app:strokeWidth="2dp" />
+        app:layout_constraintTop_toTopOf="@+id/bottomContainerV"
+        app:srcCompat="@drawable/lin_image" />
 
     <Button
         android:id="@+id/ViewMyContactsButton"
         android:layout_width="0dp"
-        android:layout_height="52dp"
+        android:layout_height="@dimen/button_size"
         android:layout_marginStart="@dimen/medium"
         android:layout_marginEnd="@dimen/medium"
+        android:layout_marginBottom="@dimen/medium"
         android:backgroundTint="@color/orange"
-        android:text="@string/view_my_contacts"
-        app:cornerRadius="8dp"
+        android:text="@string/message"
+        app:cornerRadius="@dimen/mini"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EditProfileButton" />
-
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

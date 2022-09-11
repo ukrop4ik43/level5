@@ -1,4 +1,4 @@
-package com.example.myapplication.contactsList
+package com.example.myapplication.activity
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
