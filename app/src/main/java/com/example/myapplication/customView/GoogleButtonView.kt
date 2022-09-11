@@ -1,4 +1,4 @@
-package com.example.myapplication.CustomView
+package com.example.myapplication.customView
 
 import android.content.Context
 import android.util.AttributeSet
@@ -23,8 +23,10 @@ class GoogleButtonView(
         defStyleAttr,
         0
     )
+
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
     constructor(context: Context) : this(context, null)
+
     init {
         val inflater = LayoutInflater.from(context)
         inflater.inflate(R.layout.google_button_layout, this, true)

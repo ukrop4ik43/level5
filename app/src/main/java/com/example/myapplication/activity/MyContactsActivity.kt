@@ -2,6 +2,7 @@ package com.example.myapplication.activity
 
 import android.app.Dialog
 import android.os.Bundle
+import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
@@ -34,7 +35,7 @@ class MyContactsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = MyContactsLayoutBinding.inflate(layoutInflater)
-        dialogBinding= ActivityDialogBinding.inflate(layoutInflater)
+        dialogBinding = ActivityDialogBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setAdapterAndLayoutManager()
         setListeners()
@@ -42,20 +43,19 @@ class MyContactsActivity : AppCompatActivity() {
 
     private fun setListeners() {
         usersService.addListener(usersListener)
-        val btnAlertDialogOpener: Button = findViewById(R.id.addContactB)
-        btnAlertDialogOpener.setOnClickListener {
+        binding.addContactB.setOnClickListener {
             val dialog = Dialog(this)
             dialog.setCancelable(false)
-            dialog.setContentView(R.layout.activity_dialog)
-            val imageView: ImageView = dialogBinding.avatarInDialogIV
+            dialog.setContentView(dialogBinding.root)
             dialogBinding.arrowBackB.setOnClickListener {
                 dialog.dismiss()
             }
             dialogBinding.saveB.setOnClickListener {
+                Log.d("!@#", "saving")
                 saveButtonListener(dialog)
             }
             dialogBinding.addPhotoIB.setOnClickListener {
-                generateRandomImage(imageView)
+                generateRandomImage(dialogBinding.avatarInDialogIV)
             }
             dialog.show()
         }
@@ -69,6 +69,7 @@ class MyContactsActivity : AppCompatActivity() {
         ) {
             saveButtonAction(dialog)
         } else {
+
             Toast.makeText(
                 dialog.context,
                 "Please input all the data and choose avatar",
@@ -78,10 +79,11 @@ class MyContactsActivity : AppCompatActivity() {
     }
 
     private fun saveButtonAction(dialog: Dialog) {
+
         usersService.addUser(
             dialogBinding.personNameET.text.toString(),
             dialogBinding.careerET.text.toString(),
-            chooseImage,dialogBinding.postalAddressET.text.toString()
+            chooseImage, dialogBinding.postalAddressET.text.toString()
         )
         adapter.notifyItemInserted(usersService.getSize() - 1)
         dialog.dismiss()
@@ -97,7 +99,13 @@ class MyContactsActivity : AppCompatActivity() {
         binding.recyclerView.layoutManager = layoutManager
         binding.recyclerView.adapter = adapter
         val dividerItemDecoration = DividerItemDecoration(this, RecyclerView.VERTICAL)
-        dividerItemDecoration.setDrawable(ResourcesCompat.getDrawable(resources,R.drawable.my_drawable,null)!!)
+        dividerItemDecoration.setDrawable(
+            ResourcesCompat.getDrawable(
+                resources,
+                R.drawable.my_drawable,
+                null
+            )!!
+        )
         binding.recyclerView.addItemDecoration(dividerItemDecoration)
     }
 

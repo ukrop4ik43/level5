@@ -32,7 +32,7 @@
         app:layout_constraintVertical_weight="0.5" />
 
     <TextView
-        android:id="@+id/ProfileTextView"
+        android:id="@+id/ProfileTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/medium"
@@ -82,7 +82,7 @@
         app:layout_constraintTop_toBottomOf="@+id/detailUserNameTV" />
 
     <TextView
-        android:id="@+id/HomeAddressTextView"
+        android:id="@+id/HomeAddressTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/large"
@@ -96,31 +96,31 @@
         app:layout_constraintTop_toBottomOf="@+id/detailUserNameTV" />
 
     <ImageView
-        android:id="@+id/FacebookImageView"
+        android:id="@+id/FacebookIV"
         android:layout_width="@dimen/social_messengers_size"
         android:layout_height="@dimen/social_messengers_size"
         android:layout_marginStart="@dimen/social_messengers_size"
         android:layout_marginEnd="@dimen/large"
         android:contentDescription="@string/todo"
-        app:layout_constraintEnd_toStartOf="@+id/LinkedInImageView"
+        app:layout_constraintEnd_toStartOf="@+id/linkedInIV"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/LinkedInImageView"
+        app:layout_constraintTop_toTopOf="@+id/linkedInIV"
         app:srcCompat="@drawable/facebook_image" />
 
     <ImageView
-        android:id="@+id/VKImageView"
+        android:id="@+id/vkontakteIV"
         android:layout_width="@dimen/social_messengers_size"
         android:layout_height="@dimen/social_messengers_size"
         android:layout_marginStart="@dimen/large"
         android:layout_marginEnd="@dimen/social_messengers_size"
         android:contentDescription="@string/todo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/LinkedInImageView"
-        app:layout_constraintTop_toTopOf="@+id/LinkedInImageView"
+        app:layout_constraintStart_toEndOf="@+id/linkedInIV"
+        app:layout_constraintTop_toTopOf="@+id/linkedInIV"
         app:srcCompat="@drawable/images" />
 
     <ImageView
-        android:id="@+id/LinkedInImageView"
+        android:id="@+id/linkedInIV"
         android:layout_width="@dimen/social_messengers_size"
         android:layout_height="@dimen/social_messengers_size"
         android:layout_marginTop="@dimen/social_messengers_size"
@@ -132,7 +132,7 @@
         app:srcCompat="@drawable/lin_image" />
 
     <Button
-        android:id="@+id/ViewMyContactsButton"
+        android:id="@+id/viewMyContactsB"
         android:layout_width="0dp"
         android:layout_height="@dimen/button_size"
         android:layout_marginStart="@dimen/medium"

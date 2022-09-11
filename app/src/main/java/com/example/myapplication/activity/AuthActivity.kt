@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,13 +8,13 @@ import android.util.Patterns
 import android.view.KeyEvent
 import android.view.View
 import android.view.WindowManager
-import android.widget.EditText
-import com.example.myapplication.Constants.LETTERS
-import com.example.myapplication.Constants.MINIMUM_EIGHT
-import com.example.myapplication.Constants.MINIMUM_ONE_LOWER
-import com.example.myapplication.Constants.MINIMUM_ONE_NUMBER
-import com.example.myapplication.Constants.NUMBERS
-import com.example.myapplication.activity.MainActivity
+import android.widget.Toast
+import com.example.myapplication.constants.Constants.LETTERS
+import com.example.myapplication.constants.Constants.MINIMUM_EIGHT
+import com.example.myapplication.constants.Constants.MINIMUM_ONE_LOWER
+import com.example.myapplication.constants.Constants.MINIMUM_ONE_NUMBER
+import com.example.myapplication.constants.Constants.NUMBERS
+import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityAuthBinding
 
 class AuthActivity : AppCompatActivity() {
@@ -48,12 +48,20 @@ class AuthActivity : AppCompatActivity() {
     }
 
     private fun setOnClickListener() {
-        binding.registerB.setOnClickListener { sendMessage() }
+        binding.registerB.setOnClickListener {
+            if (binding.emailET.text.toString() != "") sendMessage()
+            else {
+                Toast.makeText(
+                    this,
+                    "Please input login and password",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        }
     }
 
     private fun sendMessage() {
-        val editText = findViewById<EditText>(R.id.emailET)
-        val emailVal = editText.text.toString()
+        val emailVal = binding.emailET.text.toString()
         val intent = Intent(this, MainActivity::class.java).apply {
             putExtra(EXTRA_MESSAGE, emailVal)
         }

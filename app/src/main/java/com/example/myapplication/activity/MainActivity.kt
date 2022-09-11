@@ -4,8 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.util.Log
-import com.example.myapplication.Constants.DOG_SIGN
- 
+import com.example.myapplication.constants.Constants.DOG_SIGN
+
 import com.example.myapplication.databinding.DetailViewBinding
 
 

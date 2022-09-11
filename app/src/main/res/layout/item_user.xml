@@ -29,14 +29,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="@dimen/medium"
+        android:layout_marginTop="@dimen/mini"
         android:ellipsize="end"
         android:lines="1"
-        android:layout_marginTop="@dimen/mini"
-        tools:text="Name Surname"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/avatarIV"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Name Surname" />
 
     <TextView
         android:id="@+id/careerTV"
@@ -57,8 +57,8 @@
         android:id="@+id/trashBinIB"
         android:layout_width="@dimen/recyclerview_image_size"
         android:layout_height="@dimen/recyclerview_image_size"
-        android:layout_marginEnd="@dimen/medium"
         android:layout_marginVertical="@dimen/mini"
+        android:layout_marginEnd="@dimen/medium"
         android:backgroundTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

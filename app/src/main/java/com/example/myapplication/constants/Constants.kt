@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.constants
 
 object Constants {
     const val DOG_SIGN = '@'

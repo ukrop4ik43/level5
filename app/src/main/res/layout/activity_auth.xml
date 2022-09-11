@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/dark_blue"
-    tools:context=".AuthActivity">
+    tools:context=".activity.AuthActivity">
 
     <TextView
         android:id="@+id/aсquaintedTV"
@@ -66,7 +66,7 @@
         app:layout_constraintTop_toBottomOf="@+id/fillOutTV" />
 
     <View
-        android:id="@+id/barFirstView"
+        android:id="@+id/barFirstV"
         android:layout_width="329dp"
         android:layout_height="1dp"
         android:layout_marginBottom="4dp"
@@ -87,7 +87,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/barSecondView"
+        android:id="@+id/barSecondV"
         android:layout_width="329dp"
         android:layout_height="1dp"
         android:layout_marginBottom="6dp"
@@ -106,7 +106,7 @@
         android:textColor="@color/light_grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/barFirstView" />
+        app:layout_constraintTop_toBottomOf="@+id/barFirstV" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passContainer"
@@ -116,7 +116,7 @@
         app:helperTextTextColor="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/barSecondView">
+        app:layout_constraintTop_toBottomOf="@+id/barSecondV">
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -148,7 +148,7 @@
 
     </com.google.android.material.button.MaterialButton>
 
-    <com.example.myapplication.CustomView.GoogleButtonView
+    <com.example.myapplication.customView.GoogleButtonView
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:layout_marginHorizontal="@dimen/medium"

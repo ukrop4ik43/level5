@@ -53,7 +53,7 @@ class UsersService {
 
     }
 
-    fun getSize():Int{
+    fun getSize(): Int {
         return users.size
     }
 
@@ -62,8 +62,8 @@ class UsersService {
     }
 
 
-    fun addUser(name: String, occupy: String, photo: String,address:String) {
-        users.add(users.size, User(users.size.toLong(), photo, name, occupy,address))
+    fun addUser(name: String, occupy: String, photo: String, address: String) {
+        users.add(users.size, User(users.size.toLong(), photo, name, occupy, address))
 
     }
 

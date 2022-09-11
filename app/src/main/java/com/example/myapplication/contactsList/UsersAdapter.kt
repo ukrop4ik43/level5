@@ -52,7 +52,7 @@ class UsersAdapter(private val actionListener: UserActionListener) :
 
     class UsersViewHolder(
         val binding: ItemUserBinding
-    ) : RecyclerView.ViewHolder(binding.root){
+    ) : RecyclerView.ViewHolder(binding.root) {
     }
 
     override fun onClick(v: View) {

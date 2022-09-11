@@ -14,7 +14,7 @@
 
 
         <View
-            android:id="@+id/viewUpperBlue"
+            android:id="@+id/upperBlueV"
             android:layout_width="0dp"
             android:layout_height="200dp"
             android:background="@color/dark_blue"
@@ -67,7 +67,7 @@
             android:background="@drawable/roundbutton"
             android:contentDescription="@string/todo"
             app:cornerRadius="100dp"
-            app:layout_constraintEnd_toEndOf="@+id/viewUpperBlue"
+            app:layout_constraintEnd_toEndOf="@+id/upperBlueV"
             app:layout_constraintStart_toEndOf="@+id/avatarInDialogIV"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_baseline_add_a_photo_24" />
@@ -92,7 +92,7 @@
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/viewUpperBlue" />
+            app:layout_constraintTop_toBottomOf="@+id/upperBlueV" />
 
 
         <TextView

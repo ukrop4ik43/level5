@@ -5,5 +5,5 @@ data class User(
     val photo: String,
     val name: String,
     val occupy: String,
-    val homeAddress:String
+    val homeAddress: String
 )
