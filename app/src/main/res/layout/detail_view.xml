@@ -9,9 +9,9 @@
 
 
     <ImageButton
-        android:id="@+id/arrowBackB"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:id="@+id/btnArrowBack"
+        android:layout_width="@dimen/large"
+        android:layout_height="@dimen/large"
         android:layout_marginVertical="@dimen/large"
         android:layout_marginStart="@dimen/large"
         android:backgroundTint="@color/dark_blue"
@@ -20,19 +20,27 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/arrow_back" />
 
-    <View
-        android:id="@+id/bottomContainerV"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLeft"
         android:layout_width="wrap_content"
-        android:layout_height="309dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <View
+        android:id="@+id/vBottomContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_weight="0.5" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineLeft"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/ProfileTV"
+        android:id="@+id/tvProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/medium"
@@ -44,95 +52,99 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/detailAvatarIV"
+        android:id="@+id/ivDetailAvatar"
         android:layout_width="@dimen/detail_view_image"
         android:layout_height="@dimen/detail_view_image"
-        android:layout_marginBottom="@dimen/detail_view_image"
         android:contentDescription="@string/todo"
-        app:layout_constraintBottom_toTopOf="@+id/bottomContainerV"
+        app:layout_constraintBottom_toTopOf="@+id/tvDetailUserName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvProfile"
+        app:layout_constraintVertical_chainStyle="packed"
         app:srcCompat="@drawable/nil_image" />
 
     <TextView
-        android:id="@+id/detailUserNameTV"
+        android:id="@+id/tvDetailUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/medium"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/font_custom"
         android:gravity="center"
         android:text="@string/user_name"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/detailAvatarIV"
-        app:layout_constraintStart_toStartOf="@+id/detailAvatarIV"
-        app:layout_constraintTop_toBottomOf="@+id/detailAvatarIV" />
+        app:layout_constraintBottom_toTopOf="@+id/tvDetailCareer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivDetailAvatar" />
 
     <TextView
-        android:id="@+id/detailCareerTV"
+        android:id="@+id/tvDetailCareer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
         android:fontFamily="@font/font_custom"
         android:gravity="center"
         android:text="@string/occupy"
         android:textColor="@color/light_grey"
         android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@+id/detailUserNameTV"
-        app:layout_constraintStart_toStartOf="@+id/detailUserNameTV"
-        app:layout_constraintTop_toBottomOf="@+id/detailUserNameTV" />
+        app:layout_constraintBottom_toTopOf="@+id/tvDetailHomeAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetailUserName" />
 
     <TextView
-        android:id="@+id/HomeAddressTV"
+        android:id="@+id/tvDetailHomeAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/large"
         android:fontFamily="@font/font_custom"
         android:gravity="center"
         android:text="@string/address"
         android:textColor="@color/light_grey"
         android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@+id/detailCareerTV"
-        app:layout_constraintStart_toStartOf="@+id/detailCareerTV"
-        app:layout_constraintTop_toBottomOf="@+id/detailUserNameTV" />
+        app:layout_constraintBottom_toTopOf="@+id/vBottomContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetailCareer" />
 
     <ImageView
-        android:id="@+id/FacebookIV"
+        android:id="@+id/ivFacebook"
         android:layout_width="@dimen/social_messengers_size"
         android:layout_height="@dimen/social_messengers_size"
-        android:layout_marginStart="@dimen/social_messengers_size"
-        android:layout_marginEnd="@dimen/large"
         android:contentDescription="@string/todo"
-        app:layout_constraintEnd_toStartOf="@+id/linkedInIV"
+        app:layout_constraintBottom_toTopOf="@+id/btnViewMyContacts"
+        app:layout_constraintEnd_toStartOf="@+id/ivLinkedIn"
+        app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/linkedInIV"
+        app:layout_constraintTop_toTopOf="@+id/guidelineLeft"
         app:srcCompat="@drawable/facebook_image" />
 
     <ImageView
-        android:id="@+id/vkontakteIV"
+        android:id="@+id/ivLinkedIn"
         android:layout_width="@dimen/social_messengers_size"
         android:layout_height="@dimen/social_messengers_size"
-        android:layout_marginStart="@dimen/large"
-        android:layout_marginEnd="@dimen/social_messengers_size"
-        android:contentDescription="@string/todo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/linkedInIV"
-        app:layout_constraintTop_toTopOf="@+id/linkedInIV"
-        app:srcCompat="@drawable/images" />
-
-    <ImageView
-        android:id="@+id/linkedInIV"
-        android:layout_width="@dimen/social_messengers_size"
-        android:layout_height="@dimen/social_messengers_size"
-        android:layout_marginTop="@dimen/social_messengers_size"
         android:contentDescription="@string/todo"
         android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/bottomContainerV"
+        app:layout_constraintBottom_toTopOf="@+id/btnViewMyContacts"
+        app:layout_constraintEnd_toStartOf="@+id/ivVkontakte"
+        app:layout_constraintStart_toEndOf="@+id/ivFacebook"
+        app:layout_constraintTop_toTopOf="@+id/guidelineLeft"
         app:srcCompat="@drawable/lin_image" />
 
+    <ImageView
+        android:id="@+id/ivVkontakte"
+        android:layout_width="@dimen/social_messengers_size"
+        android:layout_height="@dimen/social_messengers_size"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toTopOf="@+id/btnViewMyContacts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivLinkedIn"
+        app:layout_constraintTop_toTopOf="@+id/guidelineLeft"
+        app:srcCompat="@drawable/images" />
+
     <Button
-        android:id="@+id/viewMyContactsB"
+        android:id="@+id/btnViewMyContacts"
         android:layout_width="0dp"
         android:layout_height="@dimen/button_size"
         android:layout_marginStart="@dimen/medium"

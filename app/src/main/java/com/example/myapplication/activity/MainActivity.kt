@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     private fun transformName(message: String?) {
         var name = addingNames(message)
         name = name.replace(oldChar = '.', newChar = ' ', ignoreCase = false)
-        binding.detailUserNameTV.text = name.capitalizeWords()
+        binding.tvDetailUserName.text = name.capitalizeWords()
     }
 
 

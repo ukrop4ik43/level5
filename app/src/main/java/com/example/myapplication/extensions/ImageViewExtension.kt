@@ -13,3 +13,7 @@ fun ImageView.addImage(user: User) {
         .error(R.drawable.me)
         .into(this)
 }
+
+fun ImageView.addImage(image:String){
+    Glide.with(this).load(image).into(this)
+}

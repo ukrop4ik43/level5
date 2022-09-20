@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scrollView"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     app:layout_constraintBottom_toTopOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent">
@@ -14,20 +15,18 @@
 
 
         <View
-            android:id="@+id/upperBlueV"
+            android:id="@+id/vUpperBlue"
             android:layout_width="0dp"
-            android:layout_height="200dp"
+            android:layout_height="@dimen/detail_view_height"
             android:background="@color/dark_blue"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/arrowBackB"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:id="@+id/btnArrowBack"
+            android:layout_width="@dimen/large"
+            android:layout_height="@dimen/large"
             android:layout_marginVertical="@dimen/large"
             android:layout_marginStart="@dimen/large"
             android:backgroundTint="@color/dark_blue"
@@ -37,7 +36,7 @@
             app:srcCompat="@drawable/arrow_back" />
 
         <TextView
-            android:id="@+id/addContactsTV"
+            android:id="@+id/tvAddContacts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/large"
@@ -45,14 +44,14 @@
             android:textColor="@color/white"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnArrowBack"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/avatarInDialogIV"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="80dp"
+            android:id="@+id/ivaAvatarInDialog"
+            android:layout_width="@dimen/avatar_iv_size"
+            android:layout_height="@dimen/avatar_iv_size"
+            android:layout_marginTop="@dimen/avatar_iv_size"
             android:contentDescription="@string/todo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -60,162 +59,184 @@
             app:srcCompat="@drawable/me" />
 
         <ImageButton
-            android:id="@+id/addPhotoIB"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="80dp"
+            android:id="@+id/ibAddPhoto"
+            android:layout_width="@dimen/recyclerview_image_size"
+            android:layout_height="@dimen/recyclerview_image_size"
+            android:layout_marginTop="@dimen/avatar_iv_size"
             android:background="@drawable/roundbutton"
             android:contentDescription="@string/todo"
             app:cornerRadius="100dp"
-            app:layout_constraintEnd_toEndOf="@+id/upperBlueV"
-            app:layout_constraintStart_toEndOf="@+id/avatarInDialogIV"
+            app:layout_constraintEnd_toEndOf="@+id/vUpperBlue"
+            app:layout_constraintStart_toEndOf="@+id/ivaAvatarInDialog"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_baseline_add_a_photo_24" />
+<!--        <EditText-->
+<!--            android:id="@+id/etPersonName"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_marginHorizontal="@dimen/large"-->
+<!--            android:layout_marginTop="@dimen/largest"-->
+<!--            android:autofillHints=""-->
+<!--            android:ems="10"-->
+<!--            android:inputType="textPersonName"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/vUpperBlue" />-->
 
-
-        <TextView
-            android:id="@+id/userNameTV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/user_name"
-            app:layout_constraintBottom_toTopOf="@+id/personNameET"
-            app:layout_constraintStart_toStartOf="@+id/personNameET" />
-
-        <EditText
-            android:id="@+id/personNameET"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginHorizontal="@dimen/large"
-            android:layout_marginTop="@dimen/largest"
-            android:autofillHints=""
-            android:ems="10"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/upperBlueV" />
-
-
-        <TextView
-            android:id="@+id/occupyTV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/occupy"
-            app:layout_constraintBottom_toTopOf="@+id/careerET"
-            app:layout_constraintStart_toStartOf="@+id/careerET" />
-
-        <EditText
-            android:id="@+id/careerET"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginHorizontal="@dimen/large"
-            android:layout_marginTop="@dimen/largest"
-            android:autofillHints=""
-            android:ems="10"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/personNameET" />
-
-
-        <TextView
-            android:id="@+id/emailDialogTV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/e_mail"
-            app:layout_constraintBottom_toTopOf="@+id/emailAddressET"
-            app:layout_constraintStart_toStartOf="@+id/emailAddressET" />
-
-        <EditText
-            android:id="@+id/emailAddressET"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginHorizontal="@dimen/large"
-            android:layout_marginTop="@dimen/largest"
-            android:autofillHints=""
-            android:ems="10"
-            android:inputType="textEmailAddress"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/careerET" />
-
-
-        <TextView
-            android:id="@+id/phoneTV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/phone"
-            app:layout_constraintBottom_toTopOf="@+id/phoneET"
-            app:layout_constraintStart_toStartOf="@+id/phoneET" />
-
-        <EditText
-            android:id="@+id/phoneET"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginHorizontal="@dimen/large"
-            android:layout_marginTop="@dimen/largest"
-            android:autofillHints=""
-            android:ems="10"
-            android:inputType="phone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/emailAddressET" />
-
-        <TextView
-            android:id="@+id/homeAddressTV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/address"
-            app:layout_constraintBottom_toTopOf="@+id/postalAddressET"
-            app:layout_constraintStart_toStartOf="@+id/postalAddressET" />
-
-        <EditText
-            android:id="@+id/postalAddressET"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginHorizontal="@dimen/large"
-            android:layout_marginTop="@dimen/largest"
-            android:autofillHints=""
-            android:ems="10"
-            android:inputType="textPostalAddress"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/phoneET" />
-
-        <TextView
-            android:id="@+id/dateTV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/date_of_birth"
-            app:layout_constraintBottom_toTopOf="@+id/dateET"
-            app:layout_constraintStart_toStartOf="@+id/dateET" />
-
-
-        <EditText
-            android:id="@+id/dateET"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginHorizontal="@dimen/large"
-            android:layout_marginTop="@dimen/largest"
-            android:autofillHints=""
-            android:ems="10"
-            android:inputType="date"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/postalAddressET" />
-
-        <Button
-            android:id="@+id/saveB"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:id="@+id/tilName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/large"
             android:layout_marginTop="@dimen/large"
-            android:layout_marginBottom="@dimen/large"
-            android:backgroundTint="@color/orange"
-            android:text="@string/save"
+            android:hint="@string/user_name"
+            android:minEms="10"
+            app:boxBackgroundColor="@color/white"
+            android:inputType="text"
+            android:maxLines="1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dateET" />
+            app:layout_constraintTop_toBottomOf="@+id/vUpperBlue">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName|text"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
 
+
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilCareer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/large"
+            android:layout_marginTop="@dimen/large"
+            android:hint="@string/occupy"
+            android:minEms="10"
+            app:boxBackgroundColor="@color/white"
+            android:inputType="text"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilName">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etOccupy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/large"
+            android:layout_marginTop="@dimen/large"
+            android:hint="@string/e_mail"
+            android:minEms="10"
+            app:boxBackgroundColor="@color/white"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilCareer">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/large"
+            android:layout_marginTop="@dimen/large"
+            android:hint="@string/phone"
+            android:minEms="10"
+            app:boxBackgroundColor="@color/white"
+            android:inputType="phone"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilEmail">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/large"
+            android:layout_marginTop="@dimen/large"
+            android:hint="@string/address"
+            android:minEms="10"
+            app:boxBackgroundColor="@color/white"
+            android:inputType="textPostalAddress"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilPhone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPostalAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/large"
+            android:layout_marginTop="@dimen/large"
+            android:hint="@string/date_of_birth"
+            android:minEms="10"
+            app:boxBackgroundColor="@color/white"
+            android:inputType="date"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilAddress">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/large"
+            android:backgroundTint="@color/orange"
+            android:text="@string/save"
+            android:layout_marginTop="@dimen/large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tilData"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

@@ -48,7 +48,7 @@ class GoogleButtonView(
         )
         val googleButtonText =
             typedArray.getString(R.styleable.GoogleButtonView_googleButtontext)
-        binding.googleTV.text = googleButtonText ?: "GOOGLE"
+        binding.tvGoogle.text = googleButtonText ?: "GOOGLE"
         typedArray.recycle()
     }
 }

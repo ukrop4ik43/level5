@@ -28,7 +28,7 @@ class UsersAdapter(private val actionListener: UserActionListener) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UsersViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemUserBinding.inflate(inflater, parent, false)
-        binding.trashBinIB.setOnClickListener(this)
+        binding.ibTrashBin.setOnClickListener(this)
         return UsersViewHolder(binding)
     }
 
@@ -36,13 +36,13 @@ class UsersAdapter(private val actionListener: UserActionListener) :
         val user = users[position]
         with(holder.binding) {
             holder.itemView.tag = user
-            trashBinIB.tag = user
-            nameSurnameTV.text = user.name
-            careerTV.text = user.occupy
+            ibTrashBin.tag = user
+            tvNameSurname.text = user.name
+            tvCareer.text = user.occupy
             if (user.photo.isNotBlank()) {
-                avatarIV.addImage(user)
+                ivAvatar.addImage(user)
             } else {
-                avatarIV.setImageResource(R.drawable.me)
+                ivAvatar.setImageResource(R.drawable.me)
             }
         }
 
@@ -52,8 +52,7 @@ class UsersAdapter(private val actionListener: UserActionListener) :
 
     class UsersViewHolder(
         val binding: ItemUserBinding
-    ) : RecyclerView.ViewHolder(binding.root) {
-    }
+    ) : RecyclerView.ViewHolder(binding.root)
 
     override fun onClick(v: View) {
         val user = v.tag as User
@@ -62,7 +61,7 @@ class UsersAdapter(private val actionListener: UserActionListener) :
         }
         val context = v.context
         when (v.id) {
-            R.id.trashBinIB -> {
+            R.id.ibTrashBin -> {
                 val indexToDelete = users.indexOfFirst { it.id == user.id }
                 actionListener.onUserDelete(user)
                 notifyItemRemoved(indexToDelete)

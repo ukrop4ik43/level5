@@ -18,19 +18,19 @@
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/trash.xml" value="0.1425" />
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/trashbin.xml" value="0.132" />
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/font/fontcustom.xml" value="0.2125" />
-        <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_auth.xml" value="0.264" />
-        <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_dialog.xml" value="0.3739021329987453" />
+        <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_auth.xml" value="0.176" />
+        <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_dialog.xml" value="0.264" />
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_dialog_add_contact.xml" value="0.176" />
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_imagechooser.xml" value="0.264" />
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.176" />
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_recycler.xml" value="0.152" />
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_third_level_start.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/detail_view.xml" value="0.15520833333333334" />
+        <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/detail_view.xml" value="0.264" />
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_item_detail.xml" value="0.2" />
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_start.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/google_button_layout.xml" value="0.16" />
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/item_user.xml" value="0.4" />
-        <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/my_contacts_layout.xml" value="0.2" />
+        <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/my_contacts_layout.xml" value="0.1" />
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/new_lay.xml" value="0.15520833333333334" />
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/test_lay.xml" value="0.264" />
         <entry key="..\:/Users/nilla/AndroidStudioProjects/MyApplication/app/src/main/res/layout/third_level_start_activity.xml" value="0.25416666666666665" />
@@ -44,5 +44,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.2" />
+      </ProjectState>
+    </option>
   </component>
 </project>

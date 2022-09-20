@@ -37,7 +37,7 @@ class AuthActivity : AppCompatActivity() {
     }
 
     private fun pressedEnter() {
-        binding.passTE.setOnKeyListener(View.OnKeyListener { _, keyCode, event ->
+        binding.tePass.setOnKeyListener(View.OnKeyListener { _, keyCode, event ->
             if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
                 //Perform Code
                 sendMessage()
@@ -48,8 +48,8 @@ class AuthActivity : AppCompatActivity() {
     }
 
     private fun setOnClickListener() {
-        binding.registerB.setOnClickListener {
-            if (binding.emailET.text.toString() != "") sendMessage()
+        binding.btnRegister.setOnClickListener {
+            if (binding.etEmail.text.toString() != "") sendMessage()
             else {
                 Toast.makeText(
                     this,
@@ -61,7 +61,7 @@ class AuthActivity : AppCompatActivity() {
     }
 
     private fun sendMessage() {
-        val emailVal = binding.emailET.text.toString()
+        val emailVal = binding.etEmail.text.toString()
         val intent = Intent(this, MainActivity::class.java).apply {
             putExtra(EXTRA_MESSAGE, emailVal)
         }
@@ -71,16 +71,16 @@ class AuthActivity : AppCompatActivity() {
 
     private fun emailFocusListener() {
         binding.run {
-            emailET.setOnFocusChangeListener { _, focused ->
+            etEmail.setOnFocusChangeListener { _, focused ->
                 if (!focused) {
-                    emailContainer.helperText = validEmail()
+                    cntEmail.helperText = validEmail()
                 }
             }
         }
     }
 
     private fun validEmail(): String? {
-        val emailText = binding.emailET.text.toString()
+        val emailText = binding.etEmail.text.toString()
         if (!Patterns.EMAIL_ADDRESS.matcher(emailText).matches()) {
             return getString(R.string.invalid_email_address)
         }
@@ -89,15 +89,15 @@ class AuthActivity : AppCompatActivity() {
 
 
     private fun passFocusListener() {
-        binding.passTE.setOnFocusChangeListener { _, focused ->
+        binding.tePass.setOnFocusChangeListener { _, focused ->
             if (!focused) {
-                binding.passContainer.helperText = validPass()
+                binding.cntPass.helperText = validPass()
             }
         }
     }
 
     private fun validPass(): String? {
-        val passText = binding.passTE.text.toString()
+        val passText = binding.tePass.text.toString()
         if (passText.length < 8) {
             return MINIMUM_EIGHT
         }
