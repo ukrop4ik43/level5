@@ -1,4 +1,4 @@
-package com.example.myapplication.activity
+package com.example.myapplication.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,7 +9,7 @@ import com.example.myapplication.constants.Constants.DOG_SIGN
 import com.example.myapplication.databinding.DetailViewBinding
 
 
-class MainActivity : AppCompatActivity() {
+class DetailActivity : AppCompatActivity() {
     private lateinit var binding: DetailViewBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

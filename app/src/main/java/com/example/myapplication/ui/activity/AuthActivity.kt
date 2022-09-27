@@ -1,20 +1,20 @@
-package com.example.myapplication.activity
+package com.example.myapplication.ui.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.AlarmClock.EXTRA_MESSAGE
+
 import android.util.Patterns
 import android.view.KeyEvent
 import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication.R
 import com.example.myapplication.constants.Constants.LETTERS
 import com.example.myapplication.constants.Constants.MINIMUM_EIGHT
 import com.example.myapplication.constants.Constants.MINIMUM_ONE_LOWER
 import com.example.myapplication.constants.Constants.MINIMUM_ONE_NUMBER
 import com.example.myapplication.constants.Constants.NUMBERS
-import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityAuthBinding
 
 class AuthActivity : AppCompatActivity() {
@@ -63,7 +63,7 @@ class AuthActivity : AppCompatActivity() {
     private fun sendMessage() {
         val emailVal = binding.etEmail.text.toString()
         val intent = Intent(this, MainActivity::class.java).apply {
-            putExtra(EXTRA_MESSAGE, emailVal)
+            putExtra("EXTRA_MESSAGE", emailVal)
         }
         startActivity(intent)
         finish()

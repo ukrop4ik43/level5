@@ -1,4 +1,4 @@
-package com.example.myapplication.activity
+package com.example.myapplication.ui.activity
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
@@ -10,10 +10,10 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import com.example.myapplication.constants.Constants
-import com.example.myapplication.contactsList.App
+import com.example.myapplication.ui.contactsList.App
 import com.example.myapplication.databinding.ActivityDialogBinding
 import com.example.myapplication.extensions.addImage
-import com.example.myapplication.model.UsersService
+import com.example.myapplication.ui.model.UsersService
 
 class ActivityDialog : DialogFragment() {
 

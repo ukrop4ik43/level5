@@ -1,6 +1,6 @@
 package com.example.myapplication.constants
 
-import com.example.myapplication.activity.ActivityDialog
+import com.example.myapplication.ui.activity.ActivityDialog
 
 object Constants {
     const val DOG_SIGN = '@'
