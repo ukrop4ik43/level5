@@ -2,6 +2,7 @@ package com.example.myapplication.ui.fragments
 
 import android.app.Dialog
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,19 +12,20 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.example.myapplication.R
 import com.example.myapplication.constants.Constants.imagesArray
 import com.example.myapplication.ui.contactsList.UsersAdapter
 import com.example.myapplication.databinding.ActivityDialogBinding
-import com.example.myapplication.databinding.FragmentStartBinding
+import com.example.myapplication.databinding.FragmentSecondBinding
 import com.example.myapplication.ui.contactsList.OnContactClickListener
 import com.example.myapplication.ui.model.User
 import com.example.myapplication.ui.viewModel.ContactsViewModel
 
 
-class StartFragment : Fragment(), OnContactClickListener {
+class SecondFragment : Fragment(), OnContactClickListener {
 
     private lateinit var chooseImage: String
-    private lateinit var binding: FragmentStartBinding
+    private lateinit var binding: FragmentSecondBinding
     private lateinit var dialogBinding: ActivityDialogBinding
 
     private val usersAdapter: UsersAdapter by lazy {
@@ -36,15 +38,12 @@ class StartFragment : Fragment(), OnContactClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentStartBinding.inflate(inflater, container, false)
-
-
+        binding = FragmentSecondBinding.inflate(inflater, container, false)
         binding.recyclerView.run {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             adapter = usersAdapter
         }
-
         binding.btnAddContact.setOnClickListener {
             dialogCreate(inflater)
         }
@@ -55,11 +54,6 @@ class StartFragment : Fragment(), OnContactClickListener {
         contactsViewModel.deleteUser(userPosition)
     }
 
-    //navigateToDetails
-    override fun navigateToDetailFragment(user: User) {
-        val action = StartFragmentDirections.actionStartFragmentToItemDetailFragment(user)
-        findNavController().navigate(action)
-    }
 
     private fun dialogCreate(inflater: LayoutInflater) {
         val dialog = Dialog(inflater.context)
@@ -122,5 +116,11 @@ class StartFragment : Fragment(), OnContactClickListener {
         contactsViewModel.contactsListLiveData.observe(viewLifecycleOwner) { users ->
             usersAdapter.submitList(users.toMutableList())
         }
+    }
+
+    //navigateToDetails
+    override fun navigateToDetailFragment(user: User) {
+        val action = ViewPagerFragmentDirections.actionViewPagerFragmentToDetailFragment(user)
+        findNavController().navigate(action)
     }
 }

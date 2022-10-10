@@ -143,6 +143,23 @@
         app:layout_constraintTop_toTopOf="@+id/guidelineLeft"
         app:srcCompat="@drawable/images" />
 
+
+    <Button
+        android:id="@+id/btnEditProfile"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_size"
+        android:layout_marginStart="@dimen/medium"
+        android:layout_marginEnd="@dimen/medium"
+        android:layout_marginBottom="@dimen/mini"
+        android:background="@drawable/button_black_corner"
+        android:text="@string/edit_profile"
+        android:textColor="@color/black"
+        app:cornerRadius="@dimen/mini"
+        app:layout_constraintBottom_toTopOf="@+id/btnViewMyContacts"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <Button
         android:id="@+id/btnViewMyContacts"
         android:layout_width="0dp"

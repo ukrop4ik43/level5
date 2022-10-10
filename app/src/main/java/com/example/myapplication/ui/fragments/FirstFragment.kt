@@ -7,23 +7,23 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.myapplication.constants.Constants
-import com.example.myapplication.databinding.FragmentItemDetailBinding
+import com.example.myapplication.databinding.FragmentFirstBinding
+
 import com.example.myapplication.ui.activity.MainActivity
 
 
-class ProfileFragment : Fragment() {
-    private lateinit var binding: FragmentItemDetailBinding
+class FirstFragment : Fragment() {
+    private lateinit var binding: FragmentFirstBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentItemDetailBinding.inflate(inflater, container, false)
+        binding = FragmentFirstBinding.inflate(inflater, container, false)
         val activityOne: MainActivity? = activity as MainActivity?
         val textName = activityOne?.sendData()
         transformName(textName)
         Log.d("MainActivity", "email in fragment value- $textName")
-
         return binding.root
     }
 

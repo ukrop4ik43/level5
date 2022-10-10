@@ -1,27 +1,25 @@
 package com.example.myapplication.ui.viewpager
 
-import android.content.res.Resources
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.myapplication.ui.fragments.ProfileFragment
-import com.example.myapplication.ui.fragments.StartFragment
 
-class PagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
-    override fun getItemCount() = 2
+class PagerAdapter(
+    list: ArrayList<Fragment>,
+    fragmentManager: FragmentManager,
+    lifecycle: Lifecycle
+) : FragmentStateAdapter(fragmentManager, lifecycle) {
+
+     private val fragmentList=list
+
+    override fun getItemCount(): Int {
+        return fragmentList.size
+    }
 
     override fun createFragment(position: Int): Fragment {
-        return when (position) {
-            0 -> {
-                ProfileFragment()
-            }
-            1 -> {
-                StartFragment()
-
-            }
-            else -> {
-                throw Resources.NotFoundException("Position not found")
-            }
-        }
+        return fragmentList[position]
     }
+
+
 }

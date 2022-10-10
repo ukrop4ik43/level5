@@ -1,5 +1,6 @@
 package com.example.myapplication.ui.contactsList
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
@@ -68,11 +69,11 @@ class UsersAdapter(
                     Toast.makeText(it.context, "Deleted", Toast.LENGTH_LONG).show()
                 }
                 root.setOnClickListener {
+                    Log.d("Actviti", user.toString())
                     onContactClickListener.navigateToDetailFragment(user)
                 }
             }
         }
-
     }
 }
 
